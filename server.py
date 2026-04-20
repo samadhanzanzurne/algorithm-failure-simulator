@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from engines import ZeroOneKnapsackGreedy, ZeroOneKnapsackDP, FractionalKnapsackGreedy, FractionalKnapsackDP, CoinChangeGreedy, CoinChangeDP
 from analysis import ComparisonModule, ExplanationEngine
 from flask_cors import CORS
@@ -6,12 +6,12 @@ import os
 import time
 import random
 
-app = Flask(__name__, static_folder='frontend', static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
-def serve_index():
-    return send_from_directory(app.static_folder, 'index.html')
+def health_check():
+    return jsonify({"status": "Algorithm Failure Simulator Backend is Live!"}), 200
 
 ENGINE_MAP = {
     "zero_one": (ZeroOneKnapsackGreedy, ZeroOneKnapsackDP),
