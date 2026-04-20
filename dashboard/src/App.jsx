@@ -10,7 +10,7 @@ import StressTestAnalytics from './components/StressTestAnalytics';
 import logo from './assets/logo.png';
 import bgImage from './assets/background.jpg';
 
-const API_URL = 'http://127.0.0.1:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000/api';
 function App() {
   const [activeTab, setActiveTab] = useState('zero_one');
   const [simulationData, setSimulationData] = useState(null);
