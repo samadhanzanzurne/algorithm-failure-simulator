@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Failure Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Algorithm Failure Simulator</h1>
+            <p class="subtitle">0/1 Knapsack Problem: Greedy Heuristic vs. Dynamic Programming</p>
+        </header>
+
+        <main>
+            <section class="panel input-panel">
+                <h2>Simulation Parameters</h2>
+                <p class="instruction-text">Enter comma-separated lists for weights and values, and a single integer for the knapsack capacity.</p>
+                <form id="simulator-form">
+                    <div class="form-group border-bottom">
+                        <label for="weights">Weights Array</label>
+                        <input type="text" id="weights" placeholder="e.g., 10, 20, 30" required autocomplete="off">
+                    </div>
+                    <div class="form-group border-bottom">
+                        <label for="values">Values Array</label>
+                        <input type="text" id="values" placeholder="e.g., 60, 100, 120" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity">Total Capacity</label>
+                        <input type="number" id="capacity" placeholder="e.g., 50" required autocomplete="off">
+                    </div>
+                    <button type="submit" id="simulate-btn">Run Engine Implementation</button>
+                    <div id="error-message" class="error-text hidden"></div>
+                </form>
+            </section>
+
+            <section class="panel results-panel hidden" id="results-panel">
+                <h2>Analysis Output</h2>
+                
+                <div class="engines-comparison">
+                    <div class="engine-card">
+                        <h3>Greedy Heuristic Performance</h3>
+                        <div class="metric">
+                            <span class="label">Total Value Extracted</span>
+                            <span class="value" id="greedy-value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Items Selected (0-Indexed)</span>
+                            <span class="value" id="greedy-items">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="engine-card optimal-card">
+                        <h3>Dynamic Programming Optimal</h3>
+                        <div class="metric">
+                            <span class="label">Total Value Extracted</span>
+                            <span class="value" id="dp-value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Items Selected (0-Indexed)</span>
+                            <span class="value" id="dp-items">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation-box" id="explanation-box">
+                    <h3>Engine Diagnostics</h3>
+                    <p id="explanation-text"></p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Algorithm Failure Simulator &mdash; Demonstrating edge cases in heuristic optimizations.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

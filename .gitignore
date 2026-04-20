@@ -1,0 +1,29 @@
+# Python and Flask
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Node / Vite (Dashboard)
+dashboard/node_modules/
+dashboard/dist/
+dashboard/dist-ssr/
+dashboard/.env
+dashboard/.env.*.local
+dashboard/npm-debug.log*
+dashboard/yarn-error.log*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.bak
