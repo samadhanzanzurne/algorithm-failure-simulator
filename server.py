@@ -3,10 +3,10 @@ from engines import ZeroOneKnapsackGreedy, ZeroOneKnapsackDP, FractionalKnapsack
 from analysis import ComparisonModule, ExplanationEngine
 from flask_cors import CORS
 import os
-import time
 import random
 
 app = Flask(__name__)
+application = app # Standard WSGI target
 CORS(app)
 
 @app.route('/')
